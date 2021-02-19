@@ -74,6 +74,7 @@ async function main() {
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
   res.render('contact', {msg: 'email has been sent'})
+    console.log('yay')
     }
 
 main().catch(console.error);
@@ -84,5 +85,6 @@ app.post('/send', (req, res) =>{
     console.log(req.body)
 })
 
+app.set('port', (process.env || 3000))
 app.listen(3000, () => console.log('Server started...'));
 
