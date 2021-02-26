@@ -3,7 +3,9 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const nodemailer = require('nodemailer')
 const path = require('path');
+require('dotenv').config()
 
+console.log(process.env)
 const app = express()
 
 //view engine setup
@@ -48,8 +50,8 @@ async function main() {
     secureConnection: false, // TLS requires secureConnection to be false
     port: 587, // port for secure SMTP
     auth: {
-        user: 'skthedev22test@outlook.com',
-        pass: 'Forsaken2!'
+        user: process.env.email,
+        pass: process.env.password
     },
     tls: {
         rejectUnauthorized: false
