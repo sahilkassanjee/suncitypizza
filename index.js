@@ -58,7 +58,10 @@ async function main() {
 
 
   // send mail with defined transport object
-  let info = await transporter.sendMail({
+  let 
+  
+  
+  info = await transporter.sendMail({
     from: '"NODE TEST" <skthedev22test@outlook.com>', // sender address
     to: "skassanjee@gmail.com", // list of receivers
     subject: "Hello ✔", // Subject line
@@ -76,10 +79,11 @@ async function main() {
   res.render('contact', {msg: 'email has been sent'})
     console.log('yay')
     }
-
 main().catch(console.error);
 
 });
+
+
 
 app.post('/send', (req, res) =>{
     console.log(req.body)
