@@ -27,7 +27,8 @@ html{
     <a href="#" class="w3-bar-item w3-button">HOME</a>
     <a href="#menu" class="w3-bar-item w3-button">MENU</a>
     <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#myMap" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="#contact-anchor" class="w3-bar-item w3-button">CONTACT</a>
+    {{msg}}
   </div>
 </div>
   
@@ -160,7 +161,7 @@ html{
     <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
     <p class="w3-xxlarge"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
     {{msg}}
-    <form method="POST" action="send">
+    <form method="POST" id="contact-anchor"" action="send">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="Date" value="2020-11-16T20:00"></p>

@@ -86,6 +86,19 @@ app.post('/send', (req, res) => {
 
   oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN})
   
+
+  const output = `
+    <p> You have a new contact request  </p>
+    <h3> Contact Details </h3>
+    <ul>
+        <li> name: ${req.body.Name}</li>
+        <li> People: ${req.body.People}</li>
+        <li> Message: ${req.body.Message}</li>
+        <li> Date: ${req.body.Date}</li>
+    </ul>
+        `
+
+
   async function sendMail(){
     try{
       const accessToken = await oAuth2Client.getAccessToken()
@@ -106,9 +119,9 @@ app.post('/send', (req, res) => {
       const mailOptions = {
         from: 'satish <skthedev22@gmail.com>',
         to: 'skassanjee@gmail.com',
-        subject: 'Hello from the API',
+        subject: 'New Reservation!',
         text: 'hello fromm api text',
-        html: '<h1>hello from html </h1>'
+        html: output
       };
 
   
