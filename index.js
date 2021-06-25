@@ -82,6 +82,7 @@ app.get('/', (req, res) => {
 
 app.post('/send', (req, res) => {
 
+  console.log(req.body)
   const oAuth2Client = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env_REDIRECT_URI)
 
   oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN})
