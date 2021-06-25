@@ -31,58 +31,9 @@ app.get('/', (req, res) => {
 })
 
 
-// app.post('/send',(req, res) => {
-    
-//     const output = `
-//     <p> You have a new contact request  </p>
-//     <h3> Contact Details </h3>
-//     <ul>
-//         <li> name: ${req.body.Name}</li>
-//         <li> People: ${req.body.People}</li>
-//         <li> Message: ${req.body.Message}</li>
-//         <li> Date: ${req.body.Date}</li>
-//     </ul>
-//         `
-//     let testAccount = await nodemailer.createTestAccount();
-//     let transporter = nodemailer.createTransport({
-//       host: "smtp-mail.outlook.com",
-//       port: 587,
-//       secure: false, // true for 465, false for other ports
-//       auth: {
-//         user: process.env.email, // generated ethereal user
-//         pass: process.env.password, // generated ethereal password
-//       },
-//       tls: { 
-//         rejectUnauthorized: false
-//       }
-//     });
-  
-
-//     let info = await transporter.sendMail({
-//       from: ' "nodemailer Contact" <skthedev22test@outlook.com>', // sender address
-//       to: "skthedev22test@outlook.com", // list of receivers
-//       subject: "Hello ✔", // Subject line
-//       text: "Hello world?", // plain text body
-//       html: output, // html body
-//     });
-  
-//     console.log("Message sent: %s", info.messageId);
-//     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-  
-//     // Preview only available when sending through an Ethereal account
-//     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-//     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-
-//     res.render('main', {msg: 'email has been sent'})
-//   }
-  
-//   main().catch(console.error);
-
-// })
 
 app.post('/send', (req, res) => {
 
-  console.log(req.body)
   const oAuth2Client = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env_REDIRECT_URI)
 
   oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN})
